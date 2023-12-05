@@ -54,7 +54,7 @@ function DeleteEmployeeModal() {
                     <AlertDialogHeader>
                         <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
                         <AlertDialogDescription>
-                            This action cannot be undone. This will permanently delete {useEmployeePageStoreState.selectedEmployee?.firstName} {useEmployeePageStoreState.selectedEmployee?.lastName}'s
+                            This action cannot be undone. This will permanently delete {useEmployeePageStoreState.selectedEmployee?.firstName} {useEmployeePageStoreState.selectedEmployee?.lastName} &apos;s
                             account (id: {useEmployeePageStoreState.selectedEmployee?.id}) and remove all shifts linked to this employee.
                         </AlertDialogDescription>
                     </AlertDialogHeader>
