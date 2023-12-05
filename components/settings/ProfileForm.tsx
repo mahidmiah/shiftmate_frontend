@@ -57,6 +57,7 @@ function ProfileForm() {
                 streetLine2: addressLine2 || '',
                 city,
                 postCode,
+                numberOfShifts: 0
             });
             toast({
                 className: "absolute top-0 right-0",
