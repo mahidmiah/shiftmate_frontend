@@ -57,7 +57,7 @@ function Page() {
 
     const generateNewWeek = async () => {
         setLoading(true);
-        const response = await fetch('http://localhost:4000/api/week/addWeek', {
+        const response = await fetch('https://shiftmate-backend.onrender.com/api/week/addWeek', {
             method: 'POST',
             body: JSON.stringify({
                 year: globalStore.currentYear, 
@@ -90,7 +90,7 @@ function Page() {
                 title: "Successfully generated new week!",
                 description: json.message,
             });
-            const response2 = await fetch('http://localhost:4000/api/shift/getAllShifts', {
+            const response2 = await fetch('https://shiftmate-backend.onrender.com/api/shift/getAllShifts', {
                 method: 'POST',
                 body: JSON.stringify({weekNumber: globalStore.currentWeek, year: globalStore.currentYear}),
                 headers: {
@@ -225,7 +225,7 @@ function Page() {
         const getWeek = async () => {
             console.log('Getting week...');
             setLoading(true);
-            const response = await fetch('http://localhost:4000/api/shift/getAllShifts', {
+            const response = await fetch('https://shiftmate-backend.onrender.com/api/shift/getAllShifts', {
                 method: 'POST',
                 body: JSON.stringify({weekNumber: globalStore.currentWeek, year: globalStore.currentYear}),
                 headers: {

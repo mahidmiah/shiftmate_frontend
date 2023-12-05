@@ -8,7 +8,7 @@ import { toast } from './ui/use-toast';
 function LogoutButton() {
 
     const logout = async () => {
-        const response = await fetch('http://localhost:4000/api/business/logout/', {
+        const response = await fetch('https://shiftmate-backend.onrender.com/api/business/logout/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

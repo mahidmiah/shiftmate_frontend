@@ -52,7 +52,7 @@ function AddEmployeeModal() {
 
     const addEmployee = async (values: z.infer<typeof formSchema>) => {
         const { firstName, lastName, password, background, foreground } = values;
-        const response = await fetch('http://localhost:4000/api/employee/addEmployee/', {
+        const response = await fetch('https://shiftmate-backend.onrender.com/api/employee/addEmployee/', {
             method: 'POST',
             body: JSON.stringify({firstName, lastName, password, background, foreground}),
             headers: {

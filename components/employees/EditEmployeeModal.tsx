@@ -58,7 +58,7 @@ function EditEmployeeModal() {
         const employeeID = useEmployeePageStoreState.selectedEmployee?.id;
         const { firstName, lastName, currentPassword, background, foreground } = values;
         const password = values.newPassword ? values.newPassword : currentPassword;
-        const response = await fetch('http://localhost:4000/api/employee/updateEmployee/', {
+        const response = await fetch('https://shiftmate-backend.onrender.com/api/employee/updateEmployee/', {
             method: 'POST',
             body: JSON.stringify({employeeID, firstName, lastName, password, background, foreground}),
             headers: {

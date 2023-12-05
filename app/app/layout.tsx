@@ -17,7 +17,7 @@ export default function ApplLayout({children,}: {children: React.ReactNode}) {
     const useEmployeePageStoreState = useEmployeePageStore(state => state);
 
     const getAllPositions = async () => {
-        const response = await fetch('http://localhost:4000/api/business/getAllPositions', {
+        const response = await fetch('https://shiftmate-backend.onrender.com/api/business/getAllPositions', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ export default function ApplLayout({children,}: {children: React.ReactNode}) {
 
     const getEmployees = async () => {
         if (useEmployeePageStoreState.employeesData.length === 0) {
-            const response = await fetch('http://localhost:4000/api/employee/getAllEmployees/', {
+            const response = await fetch('https://shiftmate-backend.onrender.com/api/employee/getAllEmployees/', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ export default function ApplLayout({children,}: {children: React.ReactNode}) {
     }
 
     const getProfileData = async () => {
-        const response = await fetch('http://localhost:4000/api/profile/getProfile', {
+        const response = await fetch('https://shiftmate-backend.onrender.com/api/profile/getProfile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

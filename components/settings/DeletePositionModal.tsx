@@ -12,7 +12,7 @@ function DeletePositionModal() {
     const globalStore = useGlobalStore(state => state);
 
     const deletePosition = async (position: string) => {
-        const response = await fetch('http://localhost:4000/api/business/deletePosition', {
+        const response = await fetch('https://shiftmate-backend.onrender.com/api/business/deletePosition', {
             method: 'POST',
             body: JSON.stringify({positionID: position}),
             headers: {

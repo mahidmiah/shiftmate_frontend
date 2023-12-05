@@ -50,7 +50,7 @@ function LoginForm() {
 
         console.log(email, password)
 
-        const response = await fetch('http://localhost:4000/api/business/login/', {
+        const response = await fetch('https://shiftmate-backend.onrender.com/api/business/login/', {
             method: 'POST',
             body: JSON.stringify({email, password}),
             headers: {

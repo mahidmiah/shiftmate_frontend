@@ -52,7 +52,7 @@ function WeeklyFinances({day}: Props) {
         const getFinances = async () => {
             let day_: Day;
             day_ = day as Day;
-            const response = await fetch('http://localhost:4000/api/week/getFinancials', {
+            const response = await fetch('https://shiftmate-backend.onrender.com/api/week/getFinancials', {
                 method: 'POST',
                 body: JSON.stringify({year: globalStore.currentYear, weekNumber: globalStore.currentWeek}),
                 headers: {

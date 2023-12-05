@@ -17,7 +17,7 @@ function AddPositionModal() {
 
     const addNewPosition = async (values: z.infer<typeof formSchema>) => {
         const { position } = values;
-        const response = await fetch('http://localhost:4000/api/business/addPosition/', {
+        const response = await fetch('https://shiftmate-backend.onrender.com/api/business/addPosition/', {
             method: 'POST',
             body: JSON.stringify({name: position}),
             headers: {

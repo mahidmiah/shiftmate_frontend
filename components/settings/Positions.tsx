@@ -33,7 +33,7 @@ function Positions() {
     };
 
     const updatePositions = async () => {
-        const response = await fetch('http://localhost:4000/api/business/updatePositions', {
+        const response = await fetch('https://shiftmate-backend.onrender.com/api/business/updatePositions', {
             method: 'POST',
             body: JSON.stringify({positions: globalStore.positionsData}),
             headers: {

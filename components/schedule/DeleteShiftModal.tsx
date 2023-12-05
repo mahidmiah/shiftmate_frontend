@@ -12,7 +12,7 @@ function DeleteShiftModal() {
 
     const handleDeleteShift = async () => {
         const shiftID = useSchedulePageStoreState.selectedShift?._id;
-        const response = await fetch('http://localhost:4000/api/shift/deleteShift/', {
+        const response = await fetch('https://shiftmate-backend.onrender.com/api/shift/deleteShift/', {
             method: 'POST',
             body: JSON.stringify({shiftID}),
             headers: {
