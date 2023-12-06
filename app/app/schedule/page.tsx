@@ -95,7 +95,7 @@ function Page() {
                 body: JSON.stringify({weekNumber: globalStore.currentWeek, year: globalStore.currentYear}),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'http://localhost:4000' 
+                    'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
                 },
                 credentials: "include"
             });
@@ -230,7 +230,7 @@ function Page() {
                 body: JSON.stringify({weekNumber: globalStore.currentWeek, year: globalStore.currentYear}),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'http://localhost:4000' 
+                    'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
                 },
                 credentials: "include"
             });

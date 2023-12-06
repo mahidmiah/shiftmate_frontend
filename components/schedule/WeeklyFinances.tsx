@@ -57,7 +57,7 @@ function WeeklyFinances({day}: Props) {
                 body: JSON.stringify({year: globalStore.currentYear, weekNumber: globalStore.currentWeek}),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'http://localhost:4000' 
+                    'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
                 },
                 credentials: "include"
             });
