@@ -1,6 +1,9 @@
+import { ro } from "date-fns/locale";
+import { useRouter } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function middleware(request: NextRequest, response: NextResponse) {
+    const router = useRouter()
     const { pathname } = request.nextUrl;
     const cookies = request.cookies as unknown as { [key: string]: string };
     const token = cookies['access_token'] || '';
@@ -8,13 +11,13 @@ export function middleware(request: NextRequest) {
 
     if (isLoggedIn && pathname.startsWith('/auth/')) {
         // If the user is logged in and trying to access the auth routes, redirect to /app/home
-        // return NextResponse.redirect(new URL('/app/home', request.nextUrl));
-        console.log('redirecting to /app/home')
+        router.push('/app/home')
+        // console.log('redirecting to /app/home')
     }
 
     if (!isLoggedIn && pathname.startsWith('/app/')) {
         // If the user is not logged in and trying to access the app routes, redirect to /auth/login
-        // return NextResponse.redirect(new URL('/auth/login', request.nextUrl));
-        console.log('redirecting to /auth/login')
+        router.push('/auth/login')
+        // console.log('redirecting to /auth/login')
     }
 }
