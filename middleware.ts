@@ -7,6 +7,16 @@ export function middleware(request: NextRequest, response: NextResponse) {
     const token = cookies['access_token'] || '';
     const isLoggedIn = token !== '';
 
+    console.log('middleware.ts: pathname: ', pathname)
+    console.log('middleware.ts: cookies: ', cookies)
+    console.log('middleware.ts: token: ', token)
+    console.log('middleware.ts: isLoggedIn: ', isLoggedIn)
+    console.log('middleware.ts: request: ', request)
+    console.log('middleware.ts: response: ', response)
+    console.log('middleware.ts: request.nextUrl: ', request.nextUrl)
+    console.log('middleware.ts: request.nextUrl.pathname: ', request.nextUrl.pathname)
+    console.log('---------------------------------------------------------------------------')
+
     if (isLoggedIn && pathname.startsWith('/auth/')) {
         // If the user is logged in and trying to access the auth routes, redirect to /app/home
         return NextResponse.redirect(new URL('/app/home', request.nextUrl));
