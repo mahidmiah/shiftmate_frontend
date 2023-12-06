@@ -55,7 +55,7 @@ function LoginForm() {
             body: JSON.stringify({email, password}),
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://shiftmate-frontend.netlify.app' 
+                'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
             },
             credentials: "include"
         });
