@@ -36,6 +36,16 @@ function AddShiftModal() {
         return startTimes;
     };
 
+    const convertToTime = (time: string) => {
+        const [hour, minute] = time.split(':');
+        if (minute === '00') {
+            return Number(hour);
+        }
+        else {
+            return Number(hour) + 0.5;
+        }
+    }
+
     const formSchema = z.object({
         employeeId: z.string().min(1, 'Employee is required'),
         position: z.string().min(1, 'Position is required'),
@@ -57,6 +67,18 @@ function AddShiftModal() {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         setLoading(true);
+
+        if (convertToTime(values.startTime) >= convertToTime(values.endTime)) {
+            toast({
+                className: "absolute top-0 right-0",
+                variant: "destructive",
+                title: "Uh oh! Something went wrong.",
+                description: "Start time must be before end time.",
+            });
+            setLoading(false);
+            return;
+        }
+
         const { employeeId, position, startTime, endTime, day } = values;
         const response = await fetch('https://backend.shiftmate.tech/api/shift/addShift/', {
             method: 'POST',
