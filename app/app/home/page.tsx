@@ -20,7 +20,7 @@ function Page() {
             <Separator className='my-4' />
 
             <div className='flex flex-col md:flex-row gap-y-8 gap-x-8'>
-                <Card className='max-w-[300px] mt-8'>
+                <Card className='md:max-w-[300px] mt-8'>
                     <CardHeader>
                         <CardTitle>Number of employess</CardTitle>
                         <CardDescription>Number of regiested employees being managed by your business.</CardDescription>
@@ -31,7 +31,7 @@ function Page() {
                     </CardContent>
                 </Card>
 
-                <Card className='max-w-[300px] mt-8'>
+                <Card className='md:max-w-[300px] md:mt-8'>
                     <CardHeader>
                         <CardTitle>Shifts managed</CardTitle>
                         <CardDescription>Number of shifts that have been managed by your business.</CardDescription>
