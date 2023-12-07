@@ -408,14 +408,14 @@ function Page() {
                                     globalStore.positionsData?.map((position, index) => (
                                         index === globalStore.positionsData.length - 1 ?
                                         (
-                                        <div className='px-4 py-2 h-10 w-20 md:w-40 border-r bg-accent z-50' key={index}>
-                                            <div className='text-sm font-semibold'>{position}</div>
+                                        <div className='px-4 py-2 h-10 w-20 md:w-40 border-r bg-accent z-50 overflow-hidden' key={index}>
+                                            <div className='text-xs md:text-sm font-semibold'>{position}</div>
                                         </div>
                                         )
                                         :
                                         (
-                                        <div className='px-4 py-2 border-b h-10 w-20 md:w-40 border-r bg-accent z-50' key={index}>
-                                            <div className='text-sm font-semibold'>{position}</div>
+                                        <div className='px-4 py-2 border-b h-10 w-20 md:w-40 border-r bg-accent z-50 overflow-hidden' key={index}>
+                                            <div className='text-xs md:text-sm font-semibold'>{position}</div>
                                         </div>
                                         )
                                     ))
