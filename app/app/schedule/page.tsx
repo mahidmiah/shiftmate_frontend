@@ -332,9 +332,7 @@ function Page() {
                             {globalStore.selectedDays.length === 7 && (
                                 <>
                                 <div className='hidden lg:flex'>
-                                {moment(globalStore.selectedDays[0]).format('LL')} 
-                                {' - '}
-                                {moment(globalStore.selectedDays[6]).format('LL')}
+                                Week
                                 </div>
                                 <div className='lg:hidden'>
                                 {moment(globalStore.selectedDays[0]).format('DD/MM/YYYY')} 
@@ -498,7 +496,19 @@ function Page() {
         <DeleteShiftModal />
         <AddFinanceModal />
         
-        <div className='mt-6 2xl:grid grid-cols-3 gap-x-6'>
+        {globalStore.currentLocalWeeks.hasOwnProperty(`${globalStore.currentYear}_${globalStore.currentWeek}`) && (
+            <div className='mt-6 2xl:grid grid-cols-3 gap-x-6'>
+            <div className=''><CalculatedHours /></div>
+            <div className='mt-6 2xl:mt-0'><WeeklyFinances day={day} /></div>
+            <div className='border rounded-md py-4 px-4 mt-6 2xl:mt-0'>
+                <h1 className='text-3xl font-medium'>Statistics</h1>
+                <p className='mt-2'> View your weekly business statisics.</p>
+                <Separator className='my-4' />
+                {globalStore.currentLocalWeeks.hasOwnProperty(`${globalStore.currentYear}_${globalStore.currentWeek}`) && generateGraph()}
+            </div>
+        </div>
+        )}
+        {/* <div className='mt-6 2xl:grid grid-cols-3 gap-x-6'>
             <div className=''>{globalStore.currentLocalWeeks.hasOwnProperty(`${globalStore.currentYear}_${globalStore.currentWeek}`) && <CalculatedHours />}</div>
             <div className='mt-6 2xl:mt-0'>{globalStore.currentLocalWeeks.hasOwnProperty(`${globalStore.currentYear}_${globalStore.currentWeek}`) && <WeeklyFinances day={day} />}</div>
             <div className='border rounded-md py-4 px-4 mt-6 2xl:mt-0'>
@@ -507,7 +517,7 @@ function Page() {
                 <Separator className='my-4' />
                 {globalStore.currentLocalWeeks.hasOwnProperty(`${globalStore.currentYear}_${globalStore.currentWeek}`) && generateGraph()}
             </div>
-        </div>
+        </div> */}
         </>
     )
 }

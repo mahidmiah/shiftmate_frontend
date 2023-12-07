@@ -92,7 +92,7 @@ export default function ApplLayout({children,}: {children: React.ReactNode}) {
         <section className="w-full h-screen flex-col overflow-hidden">
 
             {/* Topbar */}
-            <div className="w-full h-16 border-b-2 borer-border fixed flex items-center justify-between px-4 lg:px-8">
+            <div className="w-full h-16 border-b-2 borer-border fixed flex items-center justify-between px-4 lg:px-8 bg-white">
 
                 <MobileNavBar />
                 
@@ -116,7 +116,7 @@ export default function ApplLayout({children,}: {children: React.ReactNode}) {
                 <div className="w-72 h-full border-r-200 border-border hidden lg:flex"><NavBar /></div>
 
                 {/* content */}
-                <div className="w-full h-full p-8 overflow-auto">{children}</div>
+                <div className="w-full h-full p-8 pb-16 lg:pb-8 overflow-auto">{children}</div>
             </div>
 
         </section>

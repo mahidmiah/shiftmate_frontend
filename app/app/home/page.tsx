@@ -19,7 +19,7 @@ function Page() {
 
             <Separator className='my-4' />
 
-            <div className='flex gap-x-8'>
+            <div className='flex flex-col md:flex-row gap-y-8 gap-x-8'>
                 <Card className='max-w-[300px] mt-8'>
                     <CardHeader>
                         <CardTitle>Number of employess</CardTitle>
