@@ -57,7 +57,7 @@ function Page() {
 
     const generateNewWeek = async () => {
         setLoading(true);
-        const response = await fetch('https://shiftmate-backend.onrender.com/api/week/addWeek', {
+        const response = await fetch('https://backend.shiftmate.tech/api/week/addWeek', {
             method: 'POST',
             body: JSON.stringify({
                 year: globalStore.currentYear, 
@@ -67,7 +67,7 @@ function Page() {
             }),
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'http://localhost:4000' 
+                'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech' 
             },
             credentials: "include"
         });
@@ -90,12 +90,12 @@ function Page() {
                 title: "Successfully generated new week!",
                 description: json.message,
             });
-            const response2 = await fetch('https://shiftmate-backend.onrender.com/api/shift/getAllShifts', {
+            const response2 = await fetch('https://backend.shiftmate.tech/api/shift/getAllShifts', {
                 method: 'POST',
                 body: JSON.stringify({weekNumber: globalStore.currentWeek, year: globalStore.currentYear}),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
+                    'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech/' 
                 },
                 credentials: "include"
             });
@@ -225,12 +225,12 @@ function Page() {
         const getWeek = async () => {
             console.log('Getting week...');
             setLoading(true);
-            const response = await fetch('https://shiftmate-backend.onrender.com/api/shift/getAllShifts', {
+            const response = await fetch('https://backend.shiftmate.tech/api/shift/getAllShifts', {
                 method: 'POST',
                 body: JSON.stringify({weekNumber: globalStore.currentWeek, year: globalStore.currentYear}),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
+                    'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech/' 
                 },
                 credentials: "include"
             });
