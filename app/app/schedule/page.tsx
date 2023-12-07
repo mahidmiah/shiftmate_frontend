@@ -332,12 +332,12 @@ function Page() {
                             {globalStore.selectedDays.length === 7 && (
                                 <>
                                 <div className='hidden lg:flex'>
-                                Week
+                                {moment(globalStore.selectedDays[0]).format('LL')} 
+                                {' - '}
+                                {moment(globalStore.selectedDays[6]).format('LL')}
                                 </div>
                                 <div className='lg:hidden'>
-                                {moment(globalStore.selectedDays[0]).format('DD/MM/YYYY')} 
-                                {' - '}
-                                {moment(globalStore.selectedDays[6]).format('DD/MM/YYYY')}
+                                Week
                                 </div>
                                 </>
                                 
