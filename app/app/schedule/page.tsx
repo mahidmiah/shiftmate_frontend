@@ -400,7 +400,7 @@ function Page() {
                     globalStore.currentLocalWeeks.hasOwnProperty(`${globalStore.currentYear}_${globalStore.currentWeek}`) ? (
                         <>
                             <div className='flex flex-col sticky left-0 z-50'>
-                                <div className='TOP_LEFT_CORNER h-10 w-40 border-r bg-accent border-b'>
+                                <div className='TOP_LEFT_CORNER h-10 w-20 md:w-40 border-r bg-accent border-b'>
                                     {/* top left corner */}
                                 </div>
                                 {/* Positions */}
@@ -408,13 +408,13 @@ function Page() {
                                     globalStore.positionsData?.map((position, index) => (
                                         index === globalStore.positionsData.length - 1 ?
                                         (
-                                        <div className='px-4 py-2 h-10 w-40 border-r bg-accent z-50' key={index}>
+                                        <div className='px-4 py-2 h-10 w-20 md:w-40 border-r bg-accent z-50' key={index}>
                                             <div className='text-sm font-semibold'>{position}</div>
                                         </div>
                                         )
                                         :
                                         (
-                                        <div className='px-4 py-2 border-b h-10 w-40 border-r bg-accent z-50' key={index}>
+                                        <div className='px-4 py-2 border-b h-10 w-20 md:w-40 border-r bg-accent z-50' key={index}>
                                             <div className='text-sm font-semibold'>{position}</div>
                                         </div>
                                         )
