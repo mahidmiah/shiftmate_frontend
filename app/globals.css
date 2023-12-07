@@ -122,3 +122,17 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+* {
+  -moz-user-select:none; /* Firefox */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE */
+  user-select: none; /* Standard syntax */
+}
+
+input, textarea {
+  -moz-user-select:text; /* Firefox */
+  -webkit-user-select: text; /* Safari */
+  -ms-user-select: text; /* IE */
+  user-select: text; /* Standard syntax */
+}
