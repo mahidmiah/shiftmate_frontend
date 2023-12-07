@@ -16,6 +16,8 @@ export function middleware(request: NextRequest, response: NextResponse) {
     console.log('middleware.ts: request.nextUrl: ', request.nextUrl)
     console.log('middleware.ts: request.nextUrl.pathname: ', request.nextUrl.pathname)
     console.log('---------------------------------------------------------------------------')
+    console.log('ALL COOKIES: ', request.cookies.getAll())
+    console.log('---------------------------------------------------------------------------')
 
     // if (isLoggedIn && pathname.startsWith('/auth/')) {
     //     // If the user is logged in and trying to access the auth routes, redirect to /app/home
