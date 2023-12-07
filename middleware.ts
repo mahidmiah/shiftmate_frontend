@@ -8,7 +8,7 @@ export function middleware(request: NextRequest, response: NextResponse) {
     const isLoggedIn = token !== '';
 
     console.log('middleware.ts: pathname: ', pathname)
-    console.log('middleware.ts: cookies: ', cookies)
+    console.log('middleware.ts: cookies: ', request.cookies)
     console.log('middleware.ts: token: ', token)
     console.log('middleware.ts: isLoggedIn: ', isLoggedIn)
     console.log('middleware.ts: request: ', request)
