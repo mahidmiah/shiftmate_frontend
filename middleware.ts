@@ -19,15 +19,15 @@ export function middleware(request: NextRequest, response: NextResponse) {
     console.log('ALL COOKIES: ', request.cookies.getAll())
     console.log('---------------------------------------------------------------------------')
 
-    // if (isLoggedIn && pathname.startsWith('/auth/')) {
-    //     // If the user is logged in and trying to access the auth routes, redirect to /app/home
-    //     return NextResponse.redirect(new URL('/app/home', request.nextUrl));
-    //     // console.log('redirecting to /app/home')
-    // }
+    if (isLoggedIn && pathname.startsWith('/auth/')) {
+        // If the user is logged in and trying to access the auth routes, redirect to /app/home
+        return NextResponse.redirect(new URL('/app/home', request.nextUrl));
+        // console.log('redirecting to /app/home')
+    }
 
-    // if (!isLoggedIn && pathname.startsWith('/app/')) {
-    //     // If the user is not logged in and trying to access the app routes, redirect to /auth/login
-    //     return NextResponse.redirect(new URL('/auth/login', request.nextUrl));
-    //     // console.log('redirecting to /auth/login')
-    // }
+    if (!isLoggedIn && pathname.startsWith('/app/')) {
+        // If the user is not logged in and trying to access the app routes, redirect to /auth/login
+        return NextResponse.redirect(new URL('/auth/login', request.nextUrl));
+        // console.log('redirecting to /auth/login')
+    }
 }
