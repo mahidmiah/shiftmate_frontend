@@ -4,8 +4,11 @@ import Link from 'next/link'
 import React from 'react'
 import { buttonVariants } from './ui/button'
 import { toast } from './ui/use-toast';
+import { useRouter } from 'next/navigation';
 
 function LogoutButton() {
+
+    const router = useRouter();
 
     const logout = async () => {
         const response = await fetch('https://backend.shiftmate.tech/api/business/logout/', {
@@ -35,11 +38,13 @@ function LogoutButton() {
                 title: "Successfully logged out!",
                 description: json.message,
             });
+            router.push('/auth/login');
         }
     }
 
     return (
-        <Link className={'text-md ' + buttonVariants({ variant: "ghost" }) } href={'/auth/login'} onClick={logout}>Log out</Link>
+        // <Link className={'text-md ' + buttonVariants({ variant: "ghost" }) } href={'/auth/login'} onClick={logout}>Log out</Link>
+        <button className={'text-md ' + buttonVariants({ variant: "ghost" }) } onClick={logout}>Log out</button>
     )
 }
 
