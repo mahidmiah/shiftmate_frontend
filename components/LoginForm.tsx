@@ -88,7 +88,7 @@ function LoginForm() {
     }
 
     return (
-        <div className='w-96'>
+        <div className='w-full max-w-[600px]'>
 
             <h1 className='text-2xl font-medium mb-3 text-center text-primary'>Login to your account</h1>
 

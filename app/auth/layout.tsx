@@ -14,7 +14,7 @@ export default function AuthLayout({children,}: {children: React.ReactNode}) {
     return (
         <section className='w-screen h-screen flex'>
 
-            <div className="h-full hidden w-1/2 bg-primary xl:flex flex-col justify-between text-secondary p-8">
+            <div className="h-full hidden w-1/2 bg-primary 2xl:flex flex-col justify-between text-secondary p-8">
                 <div className="flex items-center gap-x-2">
                     <div className='flex flex-col items-center justify-center text-center'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 100 100">
@@ -24,14 +24,10 @@ export default function AuthLayout({children,}: {children: React.ReactNode}) {
                     </div>
                     <p className="text-3xl font-bold">ShiftMate</p>
                 </div>
-                <div className="overflow-hidden flex items-center justify-center pb-16">
+                <div className="overflow-hidden flex items-center justify-center 2xl:p-8 bg-contain">
                     <Image
                         src={auth_hero_2}
                         alt="Picture of the author"
-                        // width={500} automatically provided
-                        // height={500} automatically provided
-                        // blurDataURL="data:..." automatically provided
-                        // placeholder="blur" // Optional blur-up while loading
                     />
                 </div>
                 <div className="font-medium pb-8">
@@ -40,10 +36,10 @@ export default function AuthLayout({children,}: {children: React.ReactNode}) {
                 </div>
             </div>
 
-            <div className="h-full w-full xl:w-1/2 overflow-hidden relative">
+            <div className="h-full w-full 2xl:w-1/2 overflow-hidden relative">
 
-                <div className="absolute w-full top-8 px-8 flex justify-between xl:justify-end items-center">
-                    <div className="flex items-center gap-x-2 xl:hidden">
+                <div className="absolute w-full top-8 px-8 flex justify-between 2xl:justify-end items-center">
+                    <div className="flex items-center gap-x-2 2xl:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 100 100">
                             <circle cx="50" cy="50" r="40" fill="#1157ee" />
                             <polygon points="50,30 60,50 50,70 40,50" fill="#FFF" />

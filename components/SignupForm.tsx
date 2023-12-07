@@ -123,7 +123,7 @@ function SignupForm() {
     }
     
     return (
-        <div className='w-96'>
+        <div className='w-full max-w-[600px]'>
 
             <h1 className='text-2xl font-medium mb-3 text-center text-primary'>Signup to use ShiftMate</h1>
 
