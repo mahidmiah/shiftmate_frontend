@@ -35,7 +35,7 @@ export default function AuthLayout({children,}: {children: React.ReactNode}) {
                     />
                 </div>
                 <div className="font-medium pb-8">
-                    <p className="text-lg mt-4">"ShiftMate has been a game-changer for managing shifts! This app is incredibly efficient and has saved me so much time. With its user-friendly interface and powerful features, I can easily schedule and organize shifts for my team. It's a must-have tool for any business owner or manager."</p>
+                    <p className="text-lg mt-4">&quot;ShiftMate has been a game-changer for managing shifts! This app is incredibly efficient and has saved me so much time. With its user-friendly interface and powerful features, I can easily schedule and organize shifts for my team. It's a must-have tool for any business owner or manager.&quot;</p>
                     <p className="text-lg mt-4">~ Sofia Davis</p>
                 </div>
             </div>
