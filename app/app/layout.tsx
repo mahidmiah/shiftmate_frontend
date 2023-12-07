@@ -17,11 +17,11 @@ export default function ApplLayout({children,}: {children: React.ReactNode}) {
     const useEmployeePageStoreState = useEmployeePageStore(state => state);
 
     const getAllPositions = async () => {
-        const response = await fetch('https://shiftmate-backend.onrender.com/api/business/getAllPositions', {
+        const response = await fetch('https://backend.shiftmate.tech/api/business/getAllPositions', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
+                'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech/' 
             },
             credentials: "include"
         });
@@ -32,11 +32,11 @@ export default function ApplLayout({children,}: {children: React.ReactNode}) {
 
     const getEmployees = async () => {
         if (useEmployeePageStoreState.employeesData.length === 0) {
-            const response = await fetch('https://shiftmate-backend.onrender.com/api/employee/getAllEmployees/', {
+            const response = await fetch('https://backend.shiftmate.tech/api/employee/getAllEmployees/', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'http://localhost:4000' 
+                    'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech' 
                 },
                 credentials: "include"
             });
@@ -57,11 +57,11 @@ export default function ApplLayout({children,}: {children: React.ReactNode}) {
     }
 
     const getProfileData = async () => {
-        const response = await fetch('https://shiftmate-backend.onrender.com/api/profile/getProfile', {
+        const response = await fetch('https://backend.shiftmate.tech/api/profile/getProfile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
+                'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech/' 
             },
             credentials: "include"
         });

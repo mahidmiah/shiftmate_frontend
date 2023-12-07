@@ -20,7 +20,7 @@ function ProfileForm() {
     // TODO - update local state and backend state
     const updateProfile = async (values: z.infer<typeof formSchema>) => {
         const { businessName, firstName, lastName, addressLine1, addressLine2, city, postCode } = values;
-        const response = await fetch('https://shiftmate-backend.onrender.com/api/profile/updateProfile', {
+        const response = await fetch('https://backend.shiftmate.tech/api/profile/updateProfile', {
             method: 'POST',
             body: JSON.stringify({
                 businessName,
@@ -33,7 +33,7 @@ function ProfileForm() {
             }),
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
+                'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech/' 
             },
             credentials: "include"
         });

@@ -11,12 +11,12 @@ function DeleteEmployeeModal() {
 
     const handleDeleteEmployee = async () => {
         const employeeID = useEmployeePageStoreState.selectedEmployee?.id;
-        const response = await fetch('https://shiftmate-backend.onrender.com/api/employee/deleteEmployee/', {
+        const response = await fetch('https://backend.shiftmate.tech/api/employee/deleteEmployee/', {
             method: 'POST',
             body: JSON.stringify({employeeID}),
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
+                'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech/' 
             },
             credentials: "include"
         });

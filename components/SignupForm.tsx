@@ -74,12 +74,12 @@ function SignupForm() {
 
         console.log(email, password)
 
-        const response = await fetch('https://shiftmate-backend.onrender.com/api/business/signup/', {
+        const response = await fetch('https://backend.shiftmate.tech/api/business/signup/', {
             method: 'POST',
             body: JSON.stringify({email, password, ownerFirstName, ownerLastName, businessName, businessType, streetLine1, streetLine2, city, postCode}),
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
+                'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech/' 
             },
             credentials: "include"
         });

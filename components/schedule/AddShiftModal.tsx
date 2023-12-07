@@ -58,7 +58,7 @@ function AddShiftModal() {
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         setLoading(true);
         const { employeeId, position, startTime, endTime, day } = values;
-        const response = await fetch('https://shiftmate-backend.onrender.com/api/shift/addShift/', {
+        const response = await fetch('https://backend.shiftmate.tech/api/shift/addShift/', {
             method: 'POST',
             body: JSON.stringify({
                 employeeID: employeeId,
@@ -71,7 +71,7 @@ function AddShiftModal() {
             }),
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
+                'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech/' 
             },
             credentials: "include"
         });

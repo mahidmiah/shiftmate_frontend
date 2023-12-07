@@ -8,11 +8,11 @@ import { toast } from './ui/use-toast';
 function LogoutButton() {
 
     const logout = async () => {
-        const response = await fetch('https://shiftmate-backend.onrender.com/api/business/logout/', {
+        const response = await fetch('https://backend.shiftmate.tech/api/business/logout/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
+                'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech/' 
             },
             credentials: "include"
         });

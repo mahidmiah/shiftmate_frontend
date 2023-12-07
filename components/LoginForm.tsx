@@ -50,13 +50,13 @@ function LoginForm() {
 
         console.log(email, password)
 
-        const response = await fetch('https://shiftmate-backend.onrender.com/api/business/login/', {
+        const response = await fetch('https://backend.shiftmate.tech/api/business/login/', {
             method: 'POST',
             mode: 'cors',
             body: JSON.stringify({email, password}),
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://shiftmate-backend.onrender.com/' 
+                'Access-Control-Allow-Origin': 'https://backend.shiftmate.tech/' 
             },
             credentials: "include"
         });
