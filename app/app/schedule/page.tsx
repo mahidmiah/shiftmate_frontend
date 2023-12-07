@@ -497,7 +497,7 @@ function Page() {
         <AddFinanceModal />
         
         {globalStore.currentLocalWeeks.hasOwnProperty(`${globalStore.currentYear}_${globalStore.currentWeek}`) && (
-            <div className='mt-6 2xl:grid grid-cols-2 gap-x-6'>
+            <div className='mt-6 2xl:grid grid-cols-2 gap-x-6 gap-y-6'>
             <div className=''><CalculatedHours /></div>
             <div className='mt-6 2xl:mt-0'><WeeklyFinances day={day} /></div>
             <div className='border rounded-md py-4 px-4 mt-6 2xl:mt-0'>
