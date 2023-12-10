@@ -94,8 +94,6 @@ function WeeklyFinances({day}: Props) {
             const expense_ = globalStore.currentLocalWeekFinance[`${globalStore.currentYear}_${globalStore.currentWeek}`][day_ as keyof weeklyFinance].expense as number || 0;
             const profit_ = (income_ + uber_) - expense_;
 
-            console.log(day_, income_, uber_, expense_, profit_);
-
             weeklyIncome_ += income_;
             weeklyUber_ += uber_;
             weeklyExpense_ += expense_;

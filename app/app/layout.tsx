@@ -71,7 +71,6 @@ export default function ApplLayout({children,}: {children: React.ReactNode}) {
 
     useEffect(() => {
         getProfileData().then(data => {
-            console.log(data);
             const profile: profile = {
                 businessName: data.businessName,
                 firstName: data.ownerFirstName,

@@ -22,11 +22,9 @@ function Positions() {
             if (direction === 'up' && index > 0) {
                 // Swap the position with the one above
                 [newPositionArray[index], newPositionArray[index - 1]] = [newPositionArray[index - 1], newPositionArray[index]];
-                console.log('Up called')
             } else if (direction === 'down' && index < newPositionArray.length - 1) {
                 // Swap the position with the one below
                 [newPositionArray[index], newPositionArray[index + 1]] = [newPositionArray[index + 1], newPositionArray[index]];
-                console.log('Down called')
             }
             globalStore.setPositionsData(newPositionArray);
         }

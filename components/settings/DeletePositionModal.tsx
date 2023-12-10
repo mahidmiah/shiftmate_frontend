@@ -30,7 +30,6 @@ function DeletePositionModal() {
                 title: "Uh oh! Something went wrong.",
                 description: json.error,
             });
-            console.log(json.error)
         }
 
         if (response.ok) {

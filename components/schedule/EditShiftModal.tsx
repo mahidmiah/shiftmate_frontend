@@ -97,7 +97,6 @@ function AddShiftModal() {
                 description: json.message,
             });
             const shifts = globalStore.currentLocalWeeks[`${globalStore.currentYear}_${globalStore.currentWeek}`] as Shift[];
-            console.log(shifts);
             const existingShiftIndex = shifts.findIndex((shift) => shift._id === useSchedulePageStoreState.selectedShift._id);
             const newShift:Shift = {
                 _id: useSchedulePageStoreState.selectedShift._id,
@@ -111,7 +110,6 @@ function AddShiftModal() {
             }
             if (existingShiftIndex !== -1) {
                 shifts[existingShiftIndex] = newShift;
-                console.log(shifts[existingShiftIndex])
             }
             globalStore.setCurrentLocalWeeks({[`${globalStore.currentYear}_${globalStore.currentWeek}`]: shifts});
             form.reset();

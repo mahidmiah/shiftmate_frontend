@@ -48,8 +48,6 @@ function LoginForm() {
 
         const {email, password} = values;
 
-        console.log(email, password)
-
         const response = await fetch('https://backend.shiftmate.tech/api/business/login/', {
             method: 'POST',
             mode: 'cors',

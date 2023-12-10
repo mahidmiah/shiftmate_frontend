@@ -65,10 +65,8 @@ function ProfileForm() {
                 title: "Profile has been updated!",
                 description: json.message,
             });
-            console.log('Profile has been updated!')
         }
 
-        console.log('End');
     }
 
     const formSchema = z.object({
@@ -105,7 +103,6 @@ function ProfileForm() {
                 city: globalStore.profileData.city,
                 postCode: globalStore.profileData.postCode,
             });
-            console.log('POST CODE:', globalStore.profileData.postCode)
         }
     }, [globalStore.profileData, form.reset]);
 

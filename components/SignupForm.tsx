@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/components/ui/use-toast"
+import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
     email: z.string().min(1, 'Email is required').email('Invalid email address'),
@@ -46,6 +47,7 @@ function SignupForm() {
     const [loading, setLoading] = useState(false);
 
     const { toast } = useToast()
+    const router = useRouter()
 
     // 1. Define your form.
     const form = useForm<z.infer<typeof formSchema>>({
@@ -72,8 +74,6 @@ function SignupForm() {
 
         const {email, password, ownerFirstName, ownerLastName, businessName, businessType, streetLine1, streetLine2, city, postCode} = values;
 
-        console.log(email, password)
-
         const response = await fetch('https://backend.shiftmate.tech/api/business/signup/', {
             method: 'POST',
             body: JSON.stringify({email, password, ownerFirstName, ownerLastName, businessName, businessType, streetLine1, streetLine2, city, postCode}),
@@ -93,19 +93,21 @@ function SignupForm() {
                 title: "Uh oh! Something went wrong.",
                 description: json.error,
             });
+            setLoading(false);
         }
 
         if (response.ok) {
             toast({
                 className: "absolute top-0 right-0",
                 variant: "success",
-                title: "Successfully signed up!",
+                title: "Successfully signed up! Please verify your email address.",
                 description: json.message,
             });
             form.reset();
+            setLoading(false);
+            router.push('/auth/login');
         }
 
-        setLoading(false);
     }
 
     const switchToErrorTab = () => {

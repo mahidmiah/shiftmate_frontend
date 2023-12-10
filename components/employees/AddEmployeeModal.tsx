@@ -42,12 +42,7 @@ function AddEmployeeModal() {
     })
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        // console.log(values)
-        // form.reset();
-
         await addEmployee(values);
-
-        // useEmployeePageStoreState.setIsAddEmployeeModalOpen(false);
     }
 
     const addEmployee = async (values: z.infer<typeof formSchema>) => {

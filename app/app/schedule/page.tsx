@@ -223,7 +223,6 @@ function Page() {
 
     useEffect(() => {
         const getWeek = async () => {
-            console.log('Getting week...');
             setLoading(true);
             const response = await fetch('https://backend.shiftmate.tech/api/shift/getAllShifts', {
                 method: 'POST',
@@ -252,7 +251,6 @@ function Page() {
 
         if (!globalStore.currentLocalWeeks.hasOwnProperty(`${globalStore.currentYear}_${globalStore.currentWeek}`)) {
             getWeek();
-            console.log('currentLocalWeeks: ', globalStore.currentLocalWeeks);
         }
 
         generateShiftCells();
